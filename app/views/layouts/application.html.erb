@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MessageMe</title>
-    <%= favicon_link_tag %>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= render "layouts/navigator" %>
-    <div class="ui container">
-      <%= yield %>
-    </div>
-  </body>
+<head>
+  <title>MessageMe</title>
+  <%= favicon_link_tag %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<%= render "layouts/navigator" %>
+<%= render "layouts/messages" %>
+<div class="ui container">
+  <%= yield %>
+</div>
+</body>
 </html>

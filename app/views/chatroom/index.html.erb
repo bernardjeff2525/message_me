@@ -1,1 +1,53 @@
-<h1>welcome to the message_me App</h1>
+<h2 class="ui center aligned icon header">
+  <i class="circular coffee icon"></i>
+  Message Now !
+</h2>
+<div class="ui two column grid">
+  <div class="eleven wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui small feed">
+          <%= render @messages %>
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_for(@message, html:{class:"ui reply form", role:"form"}, url: message_path) do |f| %>
+          <div class="field">
+            <div class="ui blue fluid icon input">
+              <% f.text_field :body %>
+              <input type="text" placeholder="Enter a Message">
+              <%=  f.button '<i class="bordered inverted blue icon edit"></i>'.html_safe %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="five wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+
+        <div class="ui vertical blue inverted menu">
+          <a class="active teal item">
+            Inbox
+            <div class="ui teal left pointing label">1</div>
+          </a>
+          <a class="item">
+            Spam
+            <div class="ui label">51</div>
+          </a>
+          <a class="item">
+            Updates
+            <div class="ui label">1</div>
+          </a>
+          <div class="item">
+            <div class="ui transparent icon input">
+              <input type="text" placeholder="Search mail...">
+              <i class="search icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
